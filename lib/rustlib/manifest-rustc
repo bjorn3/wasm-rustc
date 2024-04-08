@@ -9,9 +9,9 @@ file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
 file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
 file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
 file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
-file:/home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT
-file:/home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE
-file:/home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT
-file:/home/gh-bjorn3/rust/dist/share/doc/rust/README.md
+file:/home/gh-bjorn3/rust/dist/share/doc/rustc/COPYRIGHT
+file:/home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-APACHE
+file:/home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-MIT
+file:/home/gh-bjorn3/rust/dist/share/doc/rustc/README.md
 file:/home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
 file:/home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1

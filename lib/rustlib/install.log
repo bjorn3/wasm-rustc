@@ -1,129 +1,91 @@
-install: uninstalling component 'rustc'
-install: removing file /home/gh-bjorn3/rust/dist/bin/rust-gdb
-$ rm -f /home/gh-bjorn3/rust/dist/bin/rust-gdb
-install: removing file /home/gh-bjorn3/rust/dist/bin/rust-gdbgui
-$ rm -f /home/gh-bjorn3/rust/dist/bin/rust-gdbgui
-install: removing file /home/gh-bjorn3/rust/dist/bin/rust-lldb
-$ rm -f /home/gh-bjorn3/rust/dist/bin/rust-lldb
-install: removing file /home/gh-bjorn3/rust/dist/bin/rustc.wasm
-$ rm -f /home/gh-bjorn3/rust/dist/bin/rustc.wasm
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
-install: removing file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
-$ rm -f /home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
-install: removing file /home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT
-$ rm -f /home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT
-install: removing file /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE
-$ rm -f /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE
-install: removing file /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT
-$ rm -f /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT
-install: removing file /home/gh-bjorn3/rust/dist/share/doc/rust/README.md
-$ rm -f /home/gh-bjorn3/rust/dist/share/doc/rust/README.md
-install: removing file /home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
-$ rm -f /home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
-install: removing file /home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1
-$ rm -f /home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1
-install: removing component manifest /home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc
-$ rm /home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc
-$ echo "rust-std-x86_64-unknown-linux-gnu" > "/home/gh-bjorn3/rust/dist/lib/rustlib/components"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib"
 $ echo "3" > "/home/gh-bjorn3/rust/dist/lib/rustlib/rust-installer-version"
 install: creating uninstall script at /home/gh-bjorn3/rust/dist/lib/rustlib/uninstall.sh
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/install.sh /home/gh-bjorn3/rust/dist/lib/rustlib/uninstall.sh
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/install.sh /home/gh-bjorn3/rust/dist/lib/rustlib/uninstall.sh
 install: installing component 'rustc'
 $ echo "rustc" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/components"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/bin"
 install: copying file /home/gh-bjorn3/rust/dist/bin/rust-gdb
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/bin/rust-gdb /home/gh-bjorn3/rust/dist/bin/rust-gdb
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/bin/rust-gdb /home/gh-bjorn3/rust/dist/bin/rust-gdb
 $ chmod 755 /home/gh-bjorn3/rust/dist/bin/rust-gdb
 $ echo "file:/home/gh-bjorn3/rust/dist/bin/rust-gdb" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/bin"
 install: copying file /home/gh-bjorn3/rust/dist/bin/rust-gdbgui
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/bin/rust-gdbgui /home/gh-bjorn3/rust/dist/bin/rust-gdbgui
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/bin/rust-gdbgui /home/gh-bjorn3/rust/dist/bin/rust-gdbgui
 $ chmod 755 /home/gh-bjorn3/rust/dist/bin/rust-gdbgui
 $ echo "file:/home/gh-bjorn3/rust/dist/bin/rust-gdbgui" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/bin"
 install: copying file /home/gh-bjorn3/rust/dist/bin/rust-lldb
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/bin/rust-lldb /home/gh-bjorn3/rust/dist/bin/rust-lldb
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/bin/rust-lldb /home/gh-bjorn3/rust/dist/bin/rust-lldb
 $ chmod 755 /home/gh-bjorn3/rust/dist/bin/rust-lldb
 $ echo "file:/home/gh-bjorn3/rust/dist/bin/rust-lldb" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/bin"
 install: copying file /home/gh-bjorn3/rust/dist/bin/rustc.wasm
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/bin/rustc.wasm /home/gh-bjorn3/rust/dist/bin/rustc.wasm
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/bin/rustc.wasm /home/gh-bjorn3/rust/dist/bin/rustc.wasm
 $ chmod 755 /home/gh-bjorn3/rust/dist/bin/rustc.wasm
 $ echo "file:/home/gh-bjorn3/rust/dist/bin/rustc.wasm" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/gdb_load_rust_pretty_printers.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/gdb_load_rust_pretty_printers.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_load_rust_pretty_printers.py" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/gdb_lookup.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/gdb_lookup.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_lookup.py" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/gdb_providers.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/gdb_providers.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/gdb_providers.py" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/lldb_commands /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/lldb_commands /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_commands" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/lldb_lookup.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/lldb_lookup.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_lookup.py" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/lldb_providers.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/lldb_providers.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/lldb_providers.py" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/lib/rustlib/etc"
 install: copying file /home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/lib/rustlib/etc/rust_types.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/lib/rustlib/etc/rust_types.py /home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
 $ chmod 644 /home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py
 $ echo "file:/home/gh-bjorn3/rust/dist/lib/rustlib/etc/rust_types.py" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
-$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rust"
-install: copying file /home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/share/doc/rust/COPYRIGHT /home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT
-$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT
-$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rust/COPYRIGHT" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
-$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rust"
-install: copying file /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/share/doc/rust/LICENSE-APACHE /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE
-$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE
-$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-APACHE" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
-$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rust"
-install: copying file /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/share/doc/rust/LICENSE-MIT /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT
-$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT
-$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rust/LICENSE-MIT" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
-$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rust"
-install: copying file /home/gh-bjorn3/rust/dist/share/doc/rust/README.md
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/share/doc/rust/README.md /home/gh-bjorn3/rust/dist/share/doc/rust/README.md
-$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rust/README.md
-$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rust/README.md" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rustc"
+install: copying file /home/gh-bjorn3/rust/dist/share/doc/rustc/COPYRIGHT
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/share/doc/rust/COPYRIGHT /home/gh-bjorn3/rust/dist/share/doc/rustc/COPYRIGHT
+$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rustc/COPYRIGHT
+$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rustc/COPYRIGHT" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rustc"
+install: copying file /home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-APACHE
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/share/doc/rust/LICENSE-APACHE /home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-APACHE
+$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-APACHE
+$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-APACHE" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rustc"
+install: copying file /home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-MIT
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/share/doc/rust/LICENSE-MIT /home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-MIT
+$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-MIT
+$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rustc/LICENSE-MIT" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
+$ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/doc/rustc"
+install: copying file /home/gh-bjorn3/rust/dist/share/doc/rustc/README.md
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/share/doc/rust/README.md /home/gh-bjorn3/rust/dist/share/doc/rustc/README.md
+$ chmod 644 /home/gh-bjorn3/rust/dist/share/doc/rustc/README.md
+$ echo "file:/home/gh-bjorn3/rust/dist/share/doc/rustc/README.md" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/man/man1"
 install: copying file /home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/share/man/man1/rustc.1 /home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/share/man/man1/rustc.1 /home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
 $ chmod 644 /home/gh-bjorn3/rust/dist/share/man/man1/rustc.1
 $ echo "file:/home/gh-bjorn3/rust/dist/share/man/man1/rustc.1" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"
 $ umask 022 && mkdir -p "/home/gh-bjorn3/rust/dist/share/man/man1"
 install: copying file /home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1
-$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasi/rustc-1.76.0-dev-wasm32-wasi/rustc/share/man/man1/rustdoc.1 /home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1
+$ cp /home/gh-bjorn3/rust/build/tmp/tarball/rustc/wasm32-wasip1-threads/rustc-1.79.0-dev-wasm32-wasip1-threads/rustc/share/man/man1/rustdoc.1 /home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1
 $ chmod 644 /home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1
 $ echo "file:/home/gh-bjorn3/rust/dist/share/man/man1/rustdoc.1" >> "/home/gh-bjorn3/rust/dist/lib/rustlib/manifest-rustc"

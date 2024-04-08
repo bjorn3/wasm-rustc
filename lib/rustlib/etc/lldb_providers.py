@@ -173,6 +173,35 @@ def StdStrSummaryProvider(valobj, dict):
     return '"%s"' % data
 
 
+def StdPathBufSummaryProvider(valobj, dict):
+    # type: (SBValue, dict) -> str
+    # logger = Logger.Logger()
+    # logger >> "[StdPathBufSummaryProvider] for " + str(valobj.GetName())
+    return StdOsStringSummaryProvider(valobj.GetChildMemberWithName("inner"), dict)
+
+
+def StdPathSummaryProvider(valobj, dict):
+    # type: (SBValue, dict) -> str
+    # logger = Logger.Logger()
+    # logger >> "[StdPathSummaryProvider] for " + str(valobj.GetName())
+    length = valobj.GetChildMemberWithName("length").GetValueAsUnsigned()
+    if length == 0:
+        return '""'
+
+    data_ptr = valobj.GetChildMemberWithName("data_ptr")
+
+    start = data_ptr.GetValueAsUnsigned()
+    error = SBError()
+    process = data_ptr.GetProcess()
+    data = process.ReadMemory(start, length, error)
+    if PY3:
+        try:
+            data = data.decode(encoding='UTF-8')
+        except UnicodeDecodeError:
+            return '%r' % data
+    return '"%s"' % data
+
+
 class StructSyntheticProvider:
     """Pretty-printer for structs and struct enum variants"""
 
@@ -267,7 +296,8 @@ class StdVecSyntheticProvider:
     """Pretty-printer for alloc::vec::Vec<T>
 
     struct Vec<T> { buf: RawVec<T>, len: usize }
-    struct RawVec<T> { ptr: Unique<T>, cap: usize, ... }
+    rust 1.75: struct RawVec<T> { ptr: Unique<T>, cap: usize, ... }
+    rust 1.76: struct RawVec<T> { ptr: Unique<T>, cap: Cap(usize), ... }
     rust 1.31.1: struct Unique<T: ?Sized> { pointer: NonZero<*const T>, ... }
     rust 1.33.0: struct Unique<T: ?Sized> { pointer: *const T, ... }
     rust 1.62.0: struct Unique<T: ?Sized> { pointer: NonNull<T>, ... }
@@ -390,7 +420,10 @@ class StdVecDequeSyntheticProvider:
         self.head = self.valobj.GetChildMemberWithName("head").GetValueAsUnsigned()
         self.size = self.valobj.GetChildMemberWithName("len").GetValueAsUnsigned()
         self.buf = self.valobj.GetChildMemberWithName("buf")
-        self.cap = self.buf.GetChildMemberWithName("cap").GetValueAsUnsigned()
+        cap = self.buf.GetChildMemberWithName("cap")
+        if cap.GetType().num_fields == 1:
+            cap = cap.GetChildAtIndex(0)
+        self.cap = cap.GetValueAsUnsigned()
 
         self.data_ptr = unwrap_unique_or_non_null(self.buf.GetChildMemberWithName("ptr"))
 
@@ -739,7 +772,12 @@ class StdRefSyntheticProvider:
 
 def StdNonZeroNumberSummaryProvider(valobj, _dict):
     # type: (SBValue, dict) -> str
-    objtype = valobj.GetType()
-    field = objtype.GetFieldAtIndex(0)
-    element = valobj.GetChildMemberWithName(field.name)
-    return element.GetValue()
+    inner = valobj.GetChildAtIndex(0)
+    inner_inner = inner.GetChildAtIndex(0)
+
+    # FIXME: Avoid printing as character literal,
+    #        see https://github.com/llvm/llvm-project/issues/65076.
+    if inner_inner.GetTypeName() in ['char', 'unsigned char']:
+      return str(inner_inner.GetValueAsSigned())
+    else:
+      return inner_inner.GetValue()
